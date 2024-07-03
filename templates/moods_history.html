@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h1 class="mt-4">Mood History</h1>
+
+<!-- List of Mood Logs -->
+<div class="card mb-4">
+  <div class="card-header">Mood History</div>
+  <div class="card-body">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Mood</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for log in mood_logs %}
+        <tr>
+          <td>{{ log.date }}</td>
+          <td>{{ log.mood.name }}</td>
+          <td>{{ log.notes }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Visual Representation of Mood Trends -->
+<div class="card mb-4">
+  <div class="card-header">Mood Trends</div>
+  <div class="card-body">
+    <div id="mood_chart"></div>
+  </div>
+</div>
+
+{% endblock %}

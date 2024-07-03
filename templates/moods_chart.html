@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h1 class="mt-4">Mood Chart</h1>
+
+<!-- Visual Representation of Mood Trends -->
+<div class="card mb-4">
+  <div class="card-header">Mood Trends Over Time</div>
+  <div class="card-body">
+    <canvas id="moodChart" width="400" height="200"></canvas>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var ctx = document.getElementById('moodChart').getContext('2d');
+    var moodChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: {{ dates | tojson }},
+        datasets: [{
+          label: 'Mood Over Time',
+          data: {{ mood_values | tojson }},
+          backgroundColor: 'rgba(54, 162, 235, 0.2)',
+          borderColor: 'rgba(54, 162, 235, 1)',
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          yAxes: [{
+            ticks: {
+              beginAtZero: true,
+              stepSize: 1
+            }
+          }]
+        }
+      }
+    });
+  });
+</script>
+{% endblock %}
