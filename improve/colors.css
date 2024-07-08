@@ -1,0 +1,176 @@
+:root {
+  --primary-bg: #f0f4f8;
+  --sidebar-bg: #2c3e50;
+  --sidebar-hover: #34495e;
+  --primary-color: #3498db;
+  --secondary-color: #2ecc71;
+  --accent-color: #e67e22;
+  --text-primary: #2c3e50;
+  --text-secondary: #7f8c8d;
+  --card-bg: #ffffff;
+  --success-color: #27ae60;
+  --warning-color: #f39c12;
+  --danger-color: #e74c3c;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--primary-bg);
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+/* Sidebar Styles */
+#sidebar-wrapper {
+    background-color: var(--sidebar-bg);
+}
+
+.list-group-item-action {
+    color: #ecf0f1;
+    background-color: transparent;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.list-group-item-action:hover, .list-group-item-action.active {
+    background-color: var(--sidebar-hover);
+    color: #ffffff;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: var(--card-bg);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    color: var(--primary-color);
+}
+
+/* Button Styles */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: #2980b9;
+    border-color: #2980b9;
+}
+
+.btn-success {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+.btn-success:hover {
+    background-color: #27ae60;
+    border-color: #27ae60;
+}
+
+.btn-warning {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.btn-warning:hover {
+    background-color: #d35400;
+    border-color: #d35400;
+}
+
+/* Card Styles */
+.card {
+    background-color: var(--card-bg);
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: bold;
+}
+
+/* Form Styles */
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
+}
+
+/* Badge Styles */
+.badge-info {
+    background-color: var(--primary-color);
+}
+
+.badge-secondary {
+    background-color: var(--text-secondary);
+}
+
+.badge-success {
+    background-color: var(--success-color);
+}
+
+/* Home Page Styles */
+.welcome-section {
+    background-color: var(--card-bg);
+    border-left: 5px solid var(--primary-color);
+}
+
+.summary-card {
+    background-color: var(--card-bg);
+    border-top: 3px solid var(--secondary-color);
+}
+
+.summary-card .count {
+    color: var(--primary-color);
+}
+
+.recent-activity {
+    background-color: var(--card-bg);
+}
+
+.activity-list li {
+    border-bottom: 1px solid var(--primary-bg);
+}
+
+/* Landing Page Styles */
+.hero {
+    background-image: linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.7)), url('../images/hero-background.jpg');
+}
+
+.cta-button {
+    background-color: var(--accent-color);
+}
+
+.cta-button:hover {
+    background-color: #d35400;
+}
+
+.features {
+    background-color: var(--primary-bg);
+}
+
+.feature-card {
+    background-color: var(--card-bg);
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.about {
+    background-color: var(--card-bg);
+}
+
+.github-link {
+    background-color: var(--sidebar-bg);
+}
+
+.github-link:hover {
+    background-color: var(--sidebar-hover);
+}
