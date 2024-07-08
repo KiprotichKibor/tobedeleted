@@ -1,0 +1,58 @@
+htmlCopy<!-- templates/landing.html -->
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="landing-page">
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Waweza</h1>
+            <p class="tagline">Empower Your Personal Growth Journey</p>
+            <a href="{{ url_for('register') }}" class="cta-button">Get Started</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <h2>Key Features</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <img src="{{ url_for('static', filename='images/goal-setting.jpg') }}" alt="Goal Setting">
+                <h3>Goal Setting</h3>
+                <p>Set and track your personal and professional goals with ease.</p>
+            </div>
+            <div class="feature-card">
+                <img src="{{ url_for('static', filename='images/habit-tracking.jpg') }}" alt="Habit Tracking">
+                <h3>Habit Tracking</h3>
+                <p>Develop positive habits and break negative ones with our intuitive tracking system.</p>
+            </div>
+            <div class="feature-card">
+                <img src="{{ url_for('static', filename='images/mood-analytics.jpg') }}" alt="Mood Analytics">
+                <h3>Mood Analytics</h3>
+                <p>Gain insights into your emotional well-being with mood tracking and analysis.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <h2>About Waweza</h2>
+        <p>Waweza was born from a personal journey of self-improvement and the desire to create a tool that could help others on their path to personal growth. Our team of passionate developers and life coaches came together to build an application that combines goal-setting, habit-tracking, and mood analysis in one cohesive platform.</p>
+        <p>This project is a Portfolio Project for Holberton School, showcasing our skills in web development and our commitment to creating meaningful applications.</p>
+        <div class="team-links">
+            <a href="https://github.com/yourusername/waweza" target="_blank" class="github-link">GitHub Repository</a>
+            <!-- Add team member links here -->
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="video-section">
+        <h2>See Waweza in Action</h2>
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/your-video-id" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <h3>What's Next for Waweza?</h3>
+        <p>We're constantly working to improve Waweza. Our upcoming features include personalized AI-driven insights, integration with popular productivity tools, and a mobile app for on-the-go access to your personal development journey.</p>
+    </section>
+</div>
+{% endblock content %}
