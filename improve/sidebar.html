@@ -1,0 +1,49 @@
+<!-- Sidebar -->
+<div class="bg-light border-right" id="sidebar-wrapper">
+    <div class="sidebar-heading">
+        <img src="{{ url_for('static', filename='images/default-avatar.png') }}" alt="User Avatar" class="avatar">
+        <h3>{{ current_user.username }}</h3>
+    </div>
+    <div class="list-group list-group-flush">
+        <!-- Replace or modify these links -->
+        <a href="{{ url_for('home') }}" class="list-group-item-action">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+        <a href="{{ url_for('about') }}" class="list-group-item-action">
+            <i class="fas fa-info-circle"></i>
+            <span>About</span>
+        </a>
+        {% if current_user.is_authenticated %}
+            <a href="{{ url_for('logout') }}" class="list-group-item-action">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Logout</span>
+            </a>
+        {% else %}
+            <a href="{{ url_for('login') }}" class="list-group-item-action">
+                <i class="fas fa-sign-in-alt"></i>
+                <span>Login</span>
+            </a>
+            <a href="{{ url_for('register') }}" class="list-group-item-action">
+                <i class="fas fa-user-plus"></i>
+                <span>Register</span>
+            </a>
+        {% endif %}
+        <a href="{{ url_for('goal.goals') }}" class="list-group-item-action">
+            <i class="fas fa-bullseye"></i>
+            <span>Goals</span>
+        </a>
+        <a href="{{ url_for('habit.habits') }}" class="list-group-item-action">
+            <i class="fas fa-calendar-check"></i>
+            <span>Habits</span>
+        </a>
+        <a href="{{ url_for('mood.moods') }}" class="list-group-item-action">
+            <i class="fas fa-smile"></i>
+            <span>Moods</span>
+        </a>
+        <a href="{{ url_for('analytics.analytics') }}" class="list-group-item-action">
+            <i class="fas fa-chart-line"></i>
+            <span>Analytics</span>
+        </a>
+    </div>
+</div>
