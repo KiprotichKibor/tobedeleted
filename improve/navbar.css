@@ -1,0 +1,75 @@
+/* Sidebar Wrapper */
+#sidebar-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 1000;
+    overflow-y: auto;
+    background-color: var(--sidebar-bg);
+    transition: all 0.3s;
+    width: 250px; /* Adjust based on your preferred sidebar width */
+}
+
+/* Page Content Wrapper */
+#page-content-wrapper {
+    margin-left: 250px; /* Should match the sidebar width */
+    width: calc(100% - 250px);
+    transition: all 0.3s;
+}
+
+/* Collapsed Sidebar Styles */
+#wrapper.toggled #sidebar-wrapper {
+    margin-left: -250px;
+}
+
+#wrapper.toggled #page-content-wrapper {
+    margin-left: 0;
+    width: 100%;
+}
+
+/* Ensure content is scrollable */
+body {
+    overflow-x: hidden;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #sidebar-wrapper {
+        margin-left: -250px;
+    }
+    
+    #page-content-wrapper {
+        margin-left: 0;
+        width: 100%;
+    }
+    
+    #wrapper.toggled #sidebar-wrapper {
+        margin-left: 0;
+    }
+    
+    #wrapper.toggled #page-content-wrapper {
+        margin-left: 250px;
+        width: calc(100% - 250px);
+    }
+}
+
+/* Toggle Button */
+#menu-toggle {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1001;
+}
+
+/* Adjust this if you have a top navbar */
+.navbar {
+    margin-left: 250px;
+    width: calc(100% - 250px);
+    transition: all 0.3s;
+}
+
+#wrapper.toggled .navbar {
+    margin-left: 0;
+    width: 100%;
+}
