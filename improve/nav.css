@@ -1,0 +1,75 @@
+/* Sidebar Wrapper */
+#sidebar-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 1000;
+    overflow-y: auto;
+    background-color: rgba(44, 62, 80, 0.9); /* Semi-transparent background */
+    transition: all 0.3s;
+    width: 250px;
+    backdrop-filter: blur(10px); /* Adds a blur effect to the background */
+}
+
+/* Navigation Links */
+.list-group-item-action {
+    color: #ecf0f1;
+    background-color: transparent;
+    transition: background-color 0.3s, color 0.3s;
+    border: none;
+    padding: 15px 20px;
+    margin-bottom: 5px;
+}
+
+.list-group-item-action:hover, 
+.list-group-item-action:focus,
+.list-group-item-action.active {
+    background-color: rgba(52, 152, 219, 0.7); /* Highlight color */
+    color: #ffffff;
+    border-left: 4px solid #3498db;
+}
+
+/* Icon in navigation items */
+.list-group-item-action i {
+    margin-right: 10px;
+    width: 20px; /* Ensures consistent width for icons */
+    text-align: center;
+}
+
+/* Add a subtle separator between nav items */
+.list-group-item-action:not(:last-child) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Improve readability of nav text */
+.list-group-item-action span {
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+/* Style for the active page */
+.list-group-item-action.active {
+    background-color: rgba(52, 152, 219, 0.9); /* More opaque for active item */
+    font-weight: bold;
+}
+
+/* Hover effect */
+.list-group-item-action:hover {
+    transform: translateX(5px);
+}
+
+/* User info section in sidebar */
+.sidebar-heading {
+    padding: 20px 15px;
+    color: #ecf0f1;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    border: 2px solid #3498db;
+}

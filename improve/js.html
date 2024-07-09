@@ -1,0 +1,25 @@
+// Function to set active nav item
+function setActiveNavItem() {
+    var path = window.location.pathname;
+    $('.list-group-item-action').removeClass('active');
+    $('.list-group-item-action').each(function() {
+        if ($(this).attr('href') === path) {
+            $(this).addClass('active');
+        }
+    });
+}
+
+// Call the function when the page loads
+$(document).ready(function() {
+    setActiveNavItem();
+});
+
+// Optionally, call it again if you're using AJAX navigation
+$(document).on('ajaxComplete', function() {
+    setActiveNavItem();
+});
+
+<a href="{{ url_for('home') }}" class="list-group-item-action">
+    <i class="fas fa-home"></i>
+    <span>Home</span>
+</a>
