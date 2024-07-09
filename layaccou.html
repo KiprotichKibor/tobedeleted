@@ -1,0 +1,15 @@
+<div class="sidebar-heading">
+    {% if current_user.is_authenticated %}
+        {% if current_user.image_file %}
+            <img src="{{ url_for('static', filename='profile_pics/' + current_user.image_file) }}" alt="User Avatar" class="avatar">
+        {% else %}
+            <img src="{{ url_for('static', filename='images/default-avatar.png') }}" alt="User Avatar" class="avatar">
+        {% endif %}
+        <h3>{{ current_user.username }}</h3>
+        <a href="{{ url_for('account') }}" class="account-link">My Account</a>
+    {% else %}
+        <img src="{{ url_for('static', filename='images/default-avatar.png') }}" alt="Default Avatar" class="avatar">
+        <h3>Guest</h3>
+        <a href="{{ url_for('login') }}" class="account-link">Login</a>
+    {% endif %}
+</div>
