@@ -1,0 +1,81 @@
+/* Sidebar Wrapper */
+#sidebar-wrapper {
+    background-color: rgba(44, 62, 80, 0.95); /* Slightly less transparent */
+}
+
+/* Navigation Links */
+.list-group-item-action {
+    color: #ffffff; /* Bright white text */
+    background-color: transparent;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+    border: none;
+    padding: 15px 20px;
+    margin-bottom: 5px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Text shadow for better readability */
+}
+
+.list-group-item-action:hover, 
+.list-group-item-action:focus,
+.list-group-item-action.active {
+    background-color: rgba(52, 152, 219, 0.8); /* More opaque highlight */
+    color: #ffffff;
+    border-left: 4px solid #3498db;
+    transform: translateX(5px);
+}
+
+/* Icon in navigation items */
+.list-group-item-action i {
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
+    color: #3498db; /* Bright blue for icons */
+}
+
+/* Improve readability of nav text */
+.list-group-item-action span {
+    font-weight: 600; /* Slightly bolder text */
+    letter-spacing: 0.5px;
+}
+
+/* Style for the active page */
+.list-group-item-action.active {
+    background-color: rgba(52, 152, 219, 0.9);
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(52, 152, 219, 0.5); /* Glow effect for active item */
+}
+
+/* User info section in sidebar */
+.sidebar-heading {
+    padding: 20px 15px;
+    color: #ffffff; /* Bright white text */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar-heading h3 {
+    color: #3498db; /* Bright blue for username */
+    margin-top: 10px;
+}
+
+.avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    border: 2px solid #3498db;
+    box-shadow: 0 0 10px rgba(52, 152, 219, 0.5);
+}
+
+/* Add this if you have a lot of items and need scrolling */
+#sidebar-wrapper {
+    overflow-y: auto;
+}
+
+#sidebar-wrapper::-webkit-scrollbar {
+    width: 5px;
+}
+
+#sidebar-wrapper::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+}
