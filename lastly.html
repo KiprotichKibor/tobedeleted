@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1 class="mt-4">Edit Mood</h1>
+    <div class="card mb-4">
+        <div class="card-header">Edit Mood Entry</div>
+        <div class="card-body">
+            <form method="post" action="{{ url_for('mood.edit_mood', mood_id=mood.id) }}">
+                {{ form.hidden_tag() }}
+                <div class="form-group">
+                    {{ form.date.label }}
+                    {{ form.date(class="form-control", type="date") }}
+                </div>
+                <div class="form-group">
+                    {{ form.mood_type.label }}
+                    {{ form.mood_type(class="form-control") }}
+                </div>
+                <div class="form-group">
+                    {{ form.notes.label }}
+                    {{ form.notes(class="form-control", rows="3") }}
+                </div>
+                {{ form.submit(class="btn btn-primary") }}
+                <a href="{{ url_for('mood.moods') }}" class="btn btn-secondary">Cancel</a>
+            </form>
+        </div>
+    </div>
+{% endblock %}
