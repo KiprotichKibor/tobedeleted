@@ -1,0 +1,117 @@
+:root {
+  --sage-green: #8BA888;
+  --light-gray: #E8E8E8;
+  --white: #FFFFFF;
+  --dark-sage: #5F7A5C;
+}
+
+body {
+  background-color: var(--light-gray);
+  color: #333;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Sidebar Wrapper */
+#sidebar-wrapper {
+  background-color: var(--sage-green);
+  border-right: 1px solid var(--white);
+}
+
+/* Leaf pattern background */
+.leaf-pattern {
+  background-color: var(--sage-green);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath fill='%23ffffff' fill-opacity='0.1' d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z'/%3E%3C/svg%3E");
+}
+
+/* Navigation Links */
+.list-group-item-action {
+  color: var(--white);
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.list-group-item-action:hover, 
+.list-group-item-action:focus,
+.list-group-item-action.active {
+  background-color: var(--dark-sage);
+  color: var(--white);
+  border-left: 4px solid var(--white);
+}
+
+/* Page Content Styles */
+#page-content-wrapper {
+  background-color: var(--white);
+}
+
+/* Navbar Styles */
+.navbar {
+  background-color: var(--sage-green);
+  border-bottom: 1px solid var(--white);
+}
+
+.navbar-brand {
+  color: var(--white);
+}
+
+/* Button Styles */
+.btn-primary {
+  background-color: var(--dark-sage);
+  border-color: var(--dark-sage);
+}
+
+.btn-primary:hover {
+  background-color: var(--sage-green);
+  border-color: var(--sage-green);
+}
+
+/* Card Styles */
+.card {
+  border: 1px solid var(--white);
+  background-color: var(--light-gray);
+}
+
+.card-header {
+  background-color: var(--sage-green);
+  color: var(--white);
+}
+
+/* Landing Page Styles */
+.hero {
+  background-image: linear-gradient(rgba(139, 168, 136, 0.7), rgba(139, 168, 136, 0.7)), url('images/hero-background.png');
+}
+
+.cta-button {
+  background-color: var(--dark-sage);
+}
+
+.cta-button:hover {
+  background-color: var(--sage-green);
+}
+
+.features {
+  background-color: var(--light-gray);
+}
+
+.feature-card {
+  background-color: var(--white);
+  border: 1px solid var(--sage-green);
+}
+
+.about-section {
+  background-color: var(--white);
+}
+
+.about-section h1, .about-section .tagline {
+  color: var(--sage-green);
+}
+
+.about-section .btn-primary {
+  background-color: var(--dark-sage);
+  border-color: var(--dark-sage);
+}
+
+.about-section .btn-primary:hover {
+  background-color: var(--sage-green);
+  border-color: var(--sage-green);
+}
