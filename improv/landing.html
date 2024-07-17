@@ -1,0 +1,120 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="landing-page">
+    <!-- Hero Section -->
+    <section class="hero parallax-bg">
+        <div class="hero-content">
+            <h1 class="animated-text">Waweza</h1>
+            <p class="tagline">Empower Your Personal Growth Journey</p>
+            <a href="{{ url_for('register') }}" class="cta-button pulse">Begin Your Transformation</a>
+        </div>
+    </section>
+
+    <!-- Interactive Journey Section -->
+    <section class="journey-map">
+        <h2>Your Waweza Journey</h2>
+        <div class="journey-steps">
+            <div class="step" data-step="1">
+                <div class="step-icon">📝</div>
+                <h3>Set Goals</h3>
+                <p>Define your aspirations</p>
+            </div>
+            <div class="step" data-step="2">
+                <div class="step-icon">🌱</div>
+                <h3>Build Habits</h3>
+                <p>Nurture daily progress</p>
+            </div>
+            <div class="step" data-step="3">
+                <div class="step-icon">📊</div>
+                <h3>Track Progress</h3>
+                <p>Visualize your growth</p>
+            </div>
+            <div class="step" data-step="4">
+                <div class="step-icon">🎉</div>
+                <h3>Achieve Success</h3>
+                <p>Celebrate milestones</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section (Redesigned) -->
+    <section class="features">
+        <h2>Unlock Your Potential</h2>
+        <div class="feature-carousel">
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3>Smart Goal Setting</h3>
+                <p>AI-powered goal recommendations tailored to your aspirations.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⏰</div>
+                <h3>Habit Mastery</h3>
+                <p>Gamified habit tracking to make personal growth engaging and fun.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🧠</div>
+                <h3>Mood Insights</h3>
+                <p>Advanced analytics to understand and improve your emotional well-being.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🤝</div>
+                <h3>Community Support</h3>
+                <p>Connect with like-minded individuals on similar growth journeys.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <h2>Success Stories</h2>
+        <div class="testimonial-slider">
+            <div class="testimonial">
+                <img src="{{ url_for('static', filename='images/testimonial1.jpg') }}" alt="User 1">
+                <blockquote>"Waweza transformed my life. I've achieved goals I never thought possible!"</blockquote>
+                <cite>- Sarah K., Entrepreneur</cite>
+            </div>
+            <div class="testimonial">
+                <img src="{{ url_for('static', filename='images/testimonial2.jpg') }}" alt="User 2">
+                <blockquote>"The habit tracking feature helped me build a consistent meditation practice."</blockquote>
+                <cite>- Michael L., Teacher</cite>
+            </div>
+            <!-- Add more testimonials as needed -->
+        </div>
+    </section>
+
+    <!-- Call-to-Action Section -->
+    <section class="cta-section">
+        <h2>Ready to Become Your Best Self?</h2>
+        <p>Join thousands of others on their personal growth journey with Waweza.</p>
+        <a href="{{ url_for('register') }}" class="cta-button glow">Start Free Trial</a>
+    </section>
+
+    <!-- About Section (Condensed) -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="section-title">About Waweza</h2>
+            <p class="tagline">Your Personal Growth Companion</p>
+            <p class="intro">
+                Waweza, meaning "You Can" in Swahili, is more than an app—it's your partner in personal transformation. We combine psychological insights with cutting-edge technology to empower your journey towards becoming the best version of yourself.
+            </p>
+            <a href="#" class="learn-more">Learn More About Our Mission</a>
+        </div>
+    </section>
+
+    <!-- Video Section (Redesigned) -->
+    <section class="video-section">
+        <h2>See Waweza in Action</h2>
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/your-video-id" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <!-- Footer Links -->
+    <div class="footer-links">
+        <a href="https://github.com/yourusername/waweza" target="_blank" class="github-link">GitHub Repository</a>
+        <a href="#" class="privacy-link">Privacy Policy</a>
+        <a href="#" class="terms-link">Terms of Service</a>
+    </div>
+</div>
+{% endblock content %}
