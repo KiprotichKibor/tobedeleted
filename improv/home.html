@@ -1,0 +1,118 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="home-container leaf-pattern">
+    <main class="main-content">
+        <header class="welcome-header">
+            <h1>Welcome back, {{ current_user.username }}!</h1>
+            <p class="date">{{ current_date.strftime('%A, %B %d, %Y') }}</p>
+        </header>
+
+        <section class="quick-add">
+            <h2>Quick Add</h2>
+            <div class="quick-add-buttons">
+                <a href="{{ url_for('goal.goals') }}" class="btn btn-primary"><i class="fas fa-plus"></i> New Goal</a>
+                <a href="{{ url_for('habit.habits') }}" class="btn btn-primary"><i class="fas fa-plus"></i> New Habit</a>
+                <a href="{{ url_for('mood.moods') }}" class="btn btn-primary"><i class="fas fa-plus"></i> Log Mood</a>
+            </div>
+        </section>
+
+        <div class="summary-grid">
+            <section class="summary-card">
+                <h2>Goals Overview</h2>
+                <div class="summary-content">
+                    <div class="stat-circle">
+                        <span class="stat-number">{{ goals_count }}</span>
+                        <span class="stat-label">Active Goals</span>
+                    </div>
+                    <div class="stat-circle">
+                        <span class="stat-number">{{ completed_goals_count }}</span>
+                        <span class="stat-label">Completed</span>
+                    </div>
+                    <a href="{{ url_for('goal.goals') }}" class="view-all">View All Goals</a>
+                </div>
+            </section>
+
+            <section class="summary-card">
+                <h2>Habits Tracker</h2>
+                <div class="summary-content">
+                    <div class="stat-circle">
+                        <span class="stat-number">{{ habits_count }}</span>
+                        <span class="stat-label">Active Habits</span>
+                    </div>
+                    <div class="stat-circle">
+                        <span class="stat-number">{{ habits_completed_today }}</span>
+                        <span class="stat-label">Completed Today</span>
+                    </div>
+                    <a href="{{ url_for('habit.habits') }}" class="view-all">View All Habits</a>
+                </div>
+            </section>
+
+            <section class="summary-card">
+                <h2>Recent Moods</h2>
+                <div class="summary-content">
+                    <p>7-Day Mood Average: <strong>{{ mood_average }}/5</strong></p>
+                    <div id="mood-chart"></div>
+                    <a href="{{ url_for('mood.moods') }}" class="view-all">View Mood History</a>
+                </div>
+            </section>
+
+            <section class="summary-card">
+                <h2>Quick Analytics</h2>
+                <div class="summary-content">
+                    <div class="stat-bar">
+                        <span class="stat-label">Goal Completion</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: {{ goal_completion_rate }}%"></div>
+                        </div>
+                        <span class="stat-value">{{ goal_completion_rate }}%</span>
+                    </div>
+                    <div class="stat-bar">
+                        <span class="stat-label">Habit Streak</span>
+                        <div class="streak-display">
+                            <i class="fas fa-fire"></i>
+                            <span>{{ habit_streak }} days</span>
+                        </div>
+                    </div>
+                    <a href="{{ url_for('analytics.analytics') }}" class="view-all">View Full Analytics</a>
+                </div>
+            </section>
+        </div>
+    </main>
+</div>
+{% endblock content %}
+
+{% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    var ctx = document.getElementById('mood-chart').getContext('2d');
+    var moodChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: {{ mood_dates | safe }},
+            datasets: [{
+                label: 'Mood',
+                data: {{ mood_values | safe }},
+                borderColor: 'rgba(139, 168, 136, 1)',
+                backgroundColor: 'rgba(139, 168, 136, 0.2)',
+                tension: 0.1,
+                fill: true
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    max: 5
+                }
+            },
+            plugins: {
+                legend: {
+                    display: false
+                }
+            }
+        }
+    });
+</script>
+{% endblock scripts %}
